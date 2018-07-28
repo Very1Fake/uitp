@@ -1,5 +1,7 @@
 # UiTP LightPixel copyright 2018 GNU GPL-3.0
-# v0.0.0pa2
+# v0.0.0a1
+
+import json
 
 class Protocol():
     def __init__(self):
@@ -10,7 +12,8 @@ class Protocol():
         return msg
 
     def getMsgFromArray(self, array, encoding='utf-8'):
-        msg = bytearray(array, encoding)
+        string = json.dumps(array)
+        msg = bytes(string, encoding)
         return msg
 
 
